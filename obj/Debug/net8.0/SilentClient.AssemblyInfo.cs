@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SilentClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0598dc71b0c4bb33a5c7678fb6ef35d46c1b3ff9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SilentClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SilentClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

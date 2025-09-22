@@ -1,0 +1,2 @@
+C:\Users\darkl\source\repos\Silence\SilentClient\publish\SilentClient.pdb
+C:\Users\darkl\source\repos\Silence\SilentClient\publish\SilentClient.exe

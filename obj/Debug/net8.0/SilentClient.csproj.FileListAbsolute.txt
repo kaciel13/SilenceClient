@@ -1,0 +1,15 @@
+C:\Users\darkl\source\repos\Silence\SilentClient\bin\Debug\net8.0\SilentClient.exe
+C:\Users\darkl\source\repos\Silence\SilentClient\bin\Debug\net8.0\SilentClient.deps.json
+C:\Users\darkl\source\repos\Silence\SilentClient\bin\Debug\net8.0\SilentClient.runtimeconfig.json
+C:\Users\darkl\source\repos\Silence\SilentClient\bin\Debug\net8.0\SilentClient.dll
+C:\Users\darkl\source\repos\Silence\SilentClient\bin\Debug\net8.0\SilentClient.pdb
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.AssemblyInfoInputs.cache
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.AssemblyInfo.cs
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.csproj.CoreCompileInputs.cache
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.sourcelink.json
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.dll
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\refint\SilentClient.dll
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.pdb
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\SilentClient.genruntimeconfig.cache
+C:\Users\darkl\source\repos\Silence\SilentClient\obj\Debug\net8.0\ref\SilentClient.dll
