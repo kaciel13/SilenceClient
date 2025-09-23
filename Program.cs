@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 class Program
 {
     const string AdminCode = "chat";
-    const string ServerBase = "https://silenceserver-kaciel13.amvera.io/";
+    const string ServerBase = "http://localhost:5000/";
+   // const string ServerBase = "https://silenceserver-kaciel13.amvera.io/";
     static string localName;
     static int messCount = 2;
+    static int chatSpace = 5;
     static async Task Main()
     {
         try
@@ -38,14 +40,13 @@ class Program
             });
 
             Console.WriteLine("Наберите сообщение и нажмите Enter, чтобы отправить.");
-
             // Если stdin отсутствует (Console.ReadLine() вернёт null), ждем сигнала завершения через /quit
             while (true)
             {
                 string? line;
                 try
                 {
-                    Console.SetCursorPosition(0, messCount+10);
+                   
                     line = Console.ReadLine();
                 }
                 catch
@@ -80,12 +81,16 @@ class Program
                     var res = await http.PostAsync($"?code={AdminCode}", content).ConfigureAwait(false);
                     if (!res.IsSuccessStatusCode)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"Ошибка отправки: {res.StatusCode}");
+                        Console.ForegroundColor = ConsoleColor.Green;
                     }
                 }
                 catch (Exception ex)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ошибка отправки: " + ex.Message);
+                    Console.ForegroundColor = ConsoleColor.Green;
                 }
             }
 
@@ -94,7 +99,9 @@ class Program
         }
         catch (Exception ex)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Fatal error: " + ex);
+            Console.ForegroundColor = ConsoleColor.Green;
         }
         finally
         {
@@ -118,10 +125,12 @@ class Program
             catch (OperationCanceledException) { break; }
             catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("SSE connection error: " + ex.Message);
                 await Task.Delay(reconnectDelayMs, token).ConfigureAwait(false);
                 // экспоненциальное увеличение паузы (до 30s)
                 reconnectDelayMs = Math.Min(30000, reconnectDelayMs * 2);
+                Console.ForegroundColor = ConsoleColor.Green;
             }
         }
     }
@@ -186,37 +195,47 @@ class Program
                     
                     if(name != localName)
                     {
-                        
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{sentAt.ToLocalTime():HH:mm} {name} : {text}");
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
                     {
-                        Console.WriteLine($">> {sentAt.ToLocalTime():HH:mm} {name} : {text}");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"> {sentAt.ToLocalTime():HH:mm} {name} : {text}");
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
                     
                 }
                 else
                 {
+
                     Console.WriteLine($"? {name} : {text}");
                 }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Ответ не содержит поле 'message'.");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             messCount++;
-            Console.SetCursorPosition(0, messCount + 9);
+            Console.SetCursorPosition(0, messCount + chatSpace-1);
             Console.Write("                                                                                       ");
-            Console.SetCursorPosition(0, messCount+10);
-            Console.Write(">>");
+            Console.SetCursorPosition(0, messCount+chatSpace);
+            Console.Write(">> ");
         }
         catch (JsonException)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Невалидный JSON от сервера.");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         catch (Exception ex)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Ошибка разбора сообщения: " + ex.Message);
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
